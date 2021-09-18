@@ -53,7 +53,7 @@ class cfbBettingAnalysis(object):
         return pd.Series(year_results, index=years)
         
     
-    def calculatePayout(self, moneyline_odds, bet):
+    def calculatePayout(self, moneyline_odds, bet=100):
         '''
         Calculates moneyline payoff from a bet amount
         
@@ -97,6 +97,8 @@ class cfbBettingAnalysis(object):
         
         payouts = []
         ror = []
+        
+#        Calculating payouts for each season based on a $100 bet
         for i in self.preseason_odds['Pre-season Odds']:
             print('Odd', i)
             p, r = self.calculatePayout(int(i), 100)
@@ -108,14 +110,15 @@ class cfbBettingAnalysis(object):
         self.preseason_odds['ROR'] = ror
         self.preseason_odds['ROR %'] = self.preseason_odds['ROR'].astype(int) * 100
         
+#        Adding boolean series for championship results
         self.preseason_odds['Won Championship?'] = self.getChampionshipYears(self.preseason_odds.index)
 
-        
         print(self.preseason_odds)
         
         df = self.preseason_odds.loc[self.bama_championship_years]
         print(f'{self.team} Championship years & odds: ')
         print(df)
+        
 
 if __name__=="__main__":
     c = cfbBettingAnalysis()
