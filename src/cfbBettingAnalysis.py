@@ -15,7 +15,7 @@ class cfbBettingAnalysis(object):
     def __init__(self, team='Alabama', season='All'):
         self.team = team
         self.season = season
-        self.bama_championship_years = [2020, 2017, 2015, 2012, 2011, 2009]
+        self.bama_championship_years = [2020, 2017, 2015, 2012, 2011, 2009] # Should really make this for the team
 
     def getFutureOdds(self):
         '''
@@ -37,6 +37,21 @@ class cfbBettingAnalysis(object):
         self.preseason_odds.index = self.preseason_odds['Year'].astype(int)
             
         return self.preseason_odds
+    
+    def getChampionshipYears(self, years):
+        '''
+        Gets championship seasons for a team and returns boolean series with year as index
+        '''
+        year_results = []
+        for y in years:
+            if y in self.bama_championship_years:
+                year_results.append(True)
+            else:
+                year_results.append(False)
+#        self.preseason_odds['Won Championship?'] = year_results
+        
+        return pd.Series(year_results, index=years)
+        
     
     def calculatePayout(self, moneyline_odds, bet):
         '''
@@ -92,6 +107,9 @@ class cfbBettingAnalysis(object):
         self.preseason_odds['Payout'] = payouts
         self.preseason_odds['ROR'] = ror
         self.preseason_odds['ROR %'] = self.preseason_odds['ROR'].astype(int) * 100
+        
+        self.preseason_odds['Won Championship?'] = self.getChampionshipYears(self.preseason_odds.index)
+
         
         print(self.preseason_odds)
         
