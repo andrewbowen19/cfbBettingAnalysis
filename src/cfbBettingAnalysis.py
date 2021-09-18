@@ -78,7 +78,7 @@ class cfbBettingAnalysis(object):
 
     def scrapeResults(self, season=2020):
         """
-        Scrapes sports-reference.com for a team's results in a given year
+        Scrapes sports-reference.com for a team's game-by-game results in a given year
         """
         
 #    https://www.sports-reference.com/cfb/schools/alabama/2020-schedule.html#schedule
@@ -91,6 +91,11 @@ class cfbBettingAnalysis(object):
     def calculateTeamPayouts(self):
         """
         Calculates payouts for a given team's pre-season odds
+        Adds payouts to the classes preseason_odds attribute
+        
+        returns:
+            df - pandas DataFrame object; includes a team's success
+            self.preseason_odds - class attribute with columns added for championship result, payout and rates of return (on $100 bet per year)
         """
         self.preseason_odds['Pre-season Odds'] = self.preseason_odds['Pre-season Odds'].str.replace("+", '')
         self.preseason_odds['Pre-season Odds'] = self.preseason_odds['Pre-season Odds'].str.replace("-", '')
@@ -118,6 +123,8 @@ class cfbBettingAnalysis(object):
         df = self.preseason_odds.loc[self.bama_championship_years]
         print(f'{self.team} Championship years & odds: ')
         print(df)
+        
+        return df, self.preseason_odds
         
 
 if __name__=="__main__":
