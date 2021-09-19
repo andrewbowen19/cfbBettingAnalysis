@@ -182,7 +182,14 @@ if __name__=="__main__":
     saban_years = [2020, 2007]
     p,w,r = c.getReturns(saban_years)
     print('#################################')
-
+    
+    print('Average Returns:')
+    p_avg = p / 14
+    w_avg = w / 14
+    r_avg = round(100 * (w_avg / p_avg), 2)
+    print(f'Avg Principal: {p_avg}')
+    print(f'Avg Winnings {w_avg}')
+    print(f'Avg Return Rate: {r_avg}%')
 
 
 
