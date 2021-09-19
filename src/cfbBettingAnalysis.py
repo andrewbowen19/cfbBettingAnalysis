@@ -132,9 +132,9 @@ class cfbBettingAnalysis(object):
         
 #        True RORs & Payout -- only will get payout in seasons they actually win the Natty
         won_chip = self.preseason_odds['Won Championship?']==True
-        self.preseason_odds['True Payout'] = np.where(won_chip, self.preseason_odds['Payout'], 0)
-        self.preseason_odds['True ROR'] = np.where(won_chip, self.preseason_odds['ROR'], 0)
-        self.preseason_odds['True ROR %'] = np.where(won_chip, self.preseason_odds['ROR %'], 0)
+        self.preseason_odds['True Payout'] = np.where(won_chip, self.preseason_odds['Payout'], -100)
+        self.preseason_odds['True ROR'] = np.where(won_chip, self.preseason_odds['ROR'], -1.0)
+        self.preseason_odds['True ROR %'] = np.where(won_chip, self.preseason_odds['ROR %'], -100)
 
         print(self.preseason_odds)
         
@@ -179,7 +179,10 @@ if __name__=="__main__":
     c = cfbBettingAnalysis()
     c.getFutureOdds()
     dat, ps_odds = c.calculateTeamPayouts()
+    saban_years = [2020, 2007]
+    p,w,r = c.getReturns(saban_years)
     print('#################################')
+
 
 
 

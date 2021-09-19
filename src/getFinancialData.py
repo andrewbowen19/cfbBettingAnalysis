@@ -7,8 +7,10 @@ import os
 
 api_key = os.environ['FINNHUB_KEY']
 
-class getFinancialData(obect):
+class getFinancialData(object):
     '''
-    Class to pull financial candlestick data
+    Class to pull financial candlestick data for different blue-chip stocks/index funds
     '''
+    
+    
 
