@@ -131,27 +131,42 @@ class cfbBettingAnalysis(object):
         
         return df, self.preseason_odds
         
-
+    def getReturns(self, desired_years):
+        '''
+        Calculates net returns for consisten $100 bets on collegiate futures
+        
+        paramters:
+            desired_years - list; year range for which returns should be calculated
+            
+        returns:
+            principal - int, amount wagered in total (default 100 * # of desired_years
+            winnings - int; return, amount paid back to "investor" on their principal
+            r - float; rate of return as a %. Defined as (100 * winnings/principal)
+        '''
+        
+        print('Calculating returns....')
+    
+#        Grabbing only years where Saban is coach -- Alabama analysis
+        df = self.preseason_odds.loc[desired_years[0]: desired_years[1]]
+        print(df)
+        
+        print('---------------------------------')
+#        Calculating net rate of return
+        principal = 100 * len(df)
+        winnings = np.sum(df['True Payout'])
+        r = round(100 * (winnings / principal), 2)
+        
+        print(f'Principal {principal}')
+        print(f'Total won back {winnings}')
+        print(f'Return on Investment: {r}%')
+        
+        return principal, winnings, r
 
 if __name__=="__main__":
     c = cfbBettingAnalysis()
     c.getFutureOdds()
     dat, ps_odds = c.calculateTeamPayouts()
     print('#################################')
-    print('Calculating returns....')
-    
-#    Grabbing only years where Saban is coach
-    df = ps_odds.loc[2020:2007]
-    print(df)
-    
-    print('---------------------------------')
-#    Calculating net rate of return
-    principal = 100 * len(df)
-    winnings = np.sum(df['True Payout'])
-    r = round(100 * (winnings / principal), 2)
-    
-    print(f'Principal {principal}')
-    print(f'Total won back {winnings}')
-    print(f'Return on Investment: {r}%')
+
 
 
