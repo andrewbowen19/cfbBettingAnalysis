@@ -105,7 +105,6 @@ class cfbBettingAnalysis(object):
         
 #        Calculating payouts for each season based on a $100 bet
         for i in self.preseason_odds['Pre-season Odds']:
-            print('Odd', i)
             p, r = self.calculatePayout(int(i), 100)
             payouts.append(p)
             ror.append(r)
@@ -117,6 +116,12 @@ class cfbBettingAnalysis(object):
         
 #        Adding boolean series for championship results
         self.preseason_odds['Won Championship?'] = self.getChampionshipYears(self.preseason_odds.index)
+        
+#        True RORs & Payout -- only will get payout in seasons they actually win the Natty
+        won_chip = self.preseason_odds['Won Championship?']==True
+        self.preseason_odds['True Payout'] = np.where(won_chip, self.preseason_odds['Payout'], 0)
+        self.preseason_odds['True ROR'] = np.where(won_chip, self.preseason_odds['ROR'], 0)
+        self.preseason_odds['True ROR %'] = np.where(won_chip, self.preseason_odds['ROR %'], 0)
 
         print(self.preseason_odds)
         
@@ -127,12 +132,26 @@ class cfbBettingAnalysis(object):
         return df, self.preseason_odds
         
 
+
 if __name__=="__main__":
     c = cfbBettingAnalysis()
     c.getFutureOdds()
-    c.calculateTeamPayouts()
+    dat, ps_odds = c.calculateTeamPayouts()
     print('#################################')
-
+    print('Calculating returns....')
     
+#    Grabbing only years where Saban is coach
+    df = ps_odds.loc[2020:2007]
+    print(df)
+    
+    print('---------------------------------')
+#    Calculating net rate of return
+    principal = 100 * len(df)
+    winnings = np.sum(df['True Payout'])
+    r = round(100 * (winnings / principal), 2)
+    
+    print(f'Principal {principal}')
+    print(f'Total won back {winnings}')
+    print(f'Return on Investment: {r}%')
 
 
