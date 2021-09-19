@@ -9,7 +9,12 @@ import os
 
 class cfbBettingAnalysis(object):
     '''
-    Generates historical betting performance report for college football
+    Generates historical betting performance report for college football teams.
+    Currently set up to scrape data and calculate for Alabama betting results
+    
+    params:
+        team - str (default = Alabama); team name desired. First letter should be capitalized
+        season - int or str (default 2020); college football season desired
     '''
 
     def __init__(self, team='Alabama', season='All'):
@@ -79,6 +84,12 @@ class cfbBettingAnalysis(object):
     def scrapeResults(self, season=2020):
         """
         Scrapes sports-reference.com for a team's game-by-game results in a given year
+        
+        parameters:
+            season - int (default 2020); season desired for a team
+            
+        returns:
+            df - pandas.DataFrame object; includes game-by-game results for a given teeam and season
         """
         
 #    https://www.sports-reference.com/cfb/schools/alabama/2020-schedule.html#schedule
@@ -87,6 +98,8 @@ class cfbBettingAnalysis(object):
         url = f"https://www.sports-reference.com/cfb/schools/{team_code}/{season}-schedule.html#schedule"
         df = pd.read_html(url)[1]
         print(df)
+        
+        return df
         
     def calculateTeamPayouts(self):
         """
