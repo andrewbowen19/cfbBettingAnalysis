@@ -132,7 +132,7 @@ dmypy.json
 *.csv
 .csv
 .pdf
-.png
+
 *env/
 data/
 *data/
