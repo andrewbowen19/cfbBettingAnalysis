@@ -35,6 +35,11 @@ If you've made it this far, you've probably realized that the author has too muc
 
 Also, betting odds may not be perfect. There was difficulty in finding reliable pre-season futures lines for college football teams. If there are better sources of truth for these odds, feel free to reach out to the author and I'll update the scraper URL.
 
+## Conclusion
+In fact, gambling each august that Alabama will win the national title would produce an average yield (over time) than simply investing in an index fund. While the volatility of this investment is far greater, the potential yield is higher, placing Bama at a rare point towards the upper right of an [efficiency frontier](https://en.wikipedia.org/wiki/Efficient_frontier) chart (see below)
+
+![Efficiency Frontier with Alabama football plotted by hand](/img/efficiency_frontier.png?raw=true)
+
 ---
 ## Installation
 All dependencies used in the development environment can be found in the `requirements.txt` file. In order to install use the command:
