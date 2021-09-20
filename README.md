@@ -23,7 +23,7 @@ We assumed a $100 bet per year using the lines scraped from [Sports Odds History
 Assuming an average index fund return rate of [~15%](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp), Saban outperforms the market consistently. While he does not win the national championship [every year](https://www.sports-reference.com/cfb/schools/louisiana-state/2019.html), his continued run of championships has made his performance return positive gains over the past 14 years. 
 
 #### Alabama's Performance and Odds under Saban
-Year | Pre-season Odds |  Payout | Rate of Return | ROR % | Won Championship? | True Payout | True ROR | True ROR %                                         :---:|:---:| :---:|:---:| :---:|:---:| :---:|:---:| :---:                     
+Year | Pre-season Odds |  Payout | Rate of Return | ROR % | Won Championship? | True Payout | True ROR | True ROR %                                         :---:|:---:| :---:|:---:| :---:|:---:| :---:|:---:|:---:                     
 2020 | +300  | 300.0   |3.00  |  300   |  True   |      300.0    |   3.0   |     300
 2019 |  +250 |  250.0  | 2.50 |   200  |  False |       -100.0  |    -1.0|        -100
 2018 | +175  | 175.0  | 1.75  |  100   |  False |      -100.0   |   -1.0 |       -100
@@ -39,7 +39,8 @@ Year | Pre-season Odds |  Payout | Rate of Return | ROR % | Won Championship? | 
 2008 | +6000  |6000.0 | 60.00 |  6000|False |      -100.0   |   -1.0  |      -100
 2007 | +7500  |7500.0  |75.00 |  7500| False |      -100.0  |    -1.0  |      -100
 
-**Average Returns** |
+**Alabama Returns**
+**Category** | **Return**
 :--------------------:|:-:
 Avg Principal  | 100.0
 Avg Winnings | 200.0
