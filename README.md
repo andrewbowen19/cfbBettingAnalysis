@@ -20,7 +20,7 @@ We assumed a $100 bet per year using the lines scraped from [Sports Odds History
     
     
 ### Comparing to Index Fund Returns
-Assuming an average index fund return rate of [~15%](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp), Saban outperforms the market consistently. While he does not win the national championship [every year](https://www.sports-reference.com/cfb/schools/louisiana-state/2019.html), his continued run of championships has made his performance return positive gains over the past 14 years. 
+Assuming an average index fund return rate of [~15%](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp), Saban outperforms the market consistently. While he does not win the national championship [every year](https://www.sports-reference.com/cfb/schools/louisiana-state/2019.html), his continued run of championships has made his performance return positive gains over the past 14 years, often outpacing the market!
 
 #### Alabama's Performance and Odds under Saban
 
@@ -29,6 +29,11 @@ Assuming an average index fund return rate of [~15%](https://www.investopedia.co
 Avg Principal  | 100.0
 Avg Winnings | 200.0
 Avg Return Rate | 200.0%
+
+## Potential Method Errors
+If you've made it this far, you've probably realized that the author has too much free time. While that may be the case, I am only human and am likely to have an error in my method. For accounting for gains, the thinking was to remain consistent in how payoffs/rates of return are calculated. The use of `RoR = payoff / bet` was selected to mirror how gains are calculated for financial security [Return on Asset](https://www.investopedia.com/terms/r/returnonassets.asp). Again, this will not perfectly reflect all financial realities (inflation, fees, etc.), but it gives a good rough estimate.
+
+Also, betting odds may not be perfect. There was difficulty in finding reliable pre-season futures lines for college football teams. If there are better sources of truth for these odds, feel free to reach out to the author and I'll update the scraper URL.
 
 ---
 ## Installation
