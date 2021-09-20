@@ -5,7 +5,7 @@ Nicholas Lou Saban Jr. | The U.S. Economy
 :------------:|:------------------:
 ![](/img/the_croatian_atm.png?raw=true) |  ![](/img/index_funds_graph.png?raw=true).
 
-Is betting on Alabama every week (spread or moneyline) a better investment than [the stock market](https://www.spglobal.com/marketintelligence/en/news-insights/latest-news-headlines/s-p-500-returns-to-halve-in-coming-decade-8211-goldman-sachs-59439981) or an [index fund](https://www.businessinsider.com/personal-finance/average-stock-market-return)?
+Is betting on Alabama every season to win a national chamionship a better investment than [the stock market](https://www.spglobal.com/marketintelligence/en/news-insights/latest-news-headlines/s-p-500-returns-to-halve-in-coming-decade-8211-goldman-sachs-59439981) or an [index fund](https://www.businessinsider.com/personal-finance/average-stock-market-return)?
 
 Historical betting lines were scraped from [Sports Odds History](https://www.sportsoddshistory.com/cfb-team/?Team=Alabama&sa=cfb#nc) via pandas read_html methods. Financial data was pulled from [Finnhub](https://finnhub.io) via a free API key. 
 
