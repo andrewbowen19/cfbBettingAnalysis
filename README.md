@@ -30,7 +30,7 @@ Total Principal Invested | 1400.0 | 1400.0 |
 Ending Portfolio Value | 2800.0 | 2615.21 |
 Avg Return Rate per year | 200.0% | 8% |
 
-The Index fund returns were calculated using this (online investment calculator tool](https://www.calculator.net/investment-calculator.html?ctype=endamount&ctargetamountv=1000000&cstartingprinciplev=0&cyearsv=14&cinterestratev=8&ccompound=annually&ccontributeamountv=100&cadditionat1=beginning&ciadditionat1=annually&printit=0&x=97&y=34). We assumed a *Starting Amount* of $0 with yearly contributions of $100 at an 8% return rate over 14 years.
+The Index fund returns were calculated using this [online investment calculator tool](https://www.calculator.net/investment-calculator.html?ctype=endamount&ctargetamountv=1000000&cstartingprinciplev=0&cyearsv=14&cinterestratev=8&ccompound=annually&ccontributeamountv=100&cadditionat1=beginning&ciadditionat1=annually&printit=0&x=97&y=34). We assumed a *Starting Amount* of $0 with yearly contributions of $100 at an 8% return rate over 14 years.
 
 While 8% may not exactly match the year-over-year performance of each index fund, it serves as an approximation. Future study could include a deeper dive into yearly returns to further refine that number. 
 
