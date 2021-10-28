@@ -20,15 +20,19 @@ We assumed a $100 bet per year using the lines scraped from [Sports Odds History
     
     
 ### Comparing to Index Fund Returns
-Assuming an average index fund return rate of [~15%](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp), Saban outperforms the market consistently. While he does not win the national championship [every year](https://www.sports-reference.com/cfb/schools/louisiana-state/2019.html), his continued run of championships has made his performance return positive gains over the past 14 years, often outpacing the market!
+Assuming an average index fund return rate of [~8%](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp), Saban outperforms the market consistently. While he does not win the national championship [every year](https://www.sports-reference.com/cfb/schools/louisiana-state/2019.html), his continued run of championships has made his performance return positive gains over the past 14 years, often outpacing the market!
 
 #### Alabama's Performance and Odds under Saban
 
-**Category** | **Return**
-:--------------------:|:-:
-Avg Principal  | 100.0
-Avg Winnings | 200.0
-Avg Return Rate | 200.0%
+**Category** | **Alabama Return** (USD) | **Index Fund Return** (USD)
+:--------------------:|:-:|:-:
+Total Principal Invested | 1400.0 | 1400.0 |
+Ending Portfolio Value | 2800.0 | 2615.21 |
+Avg Return Rate per year | 200.0% | 8% |
+
+The Index fund returns were calculated using this (online investment calculator tool](https://www.calculator.net/investment-calculator.html?ctype=endamount&ctargetamountv=1000000&cstartingprinciplev=0&cyearsv=14&cinterestratev=8&ccompound=annually&ccontributeamountv=100&cadditionat1=beginning&ciadditionat1=annually&printit=0&x=97&y=34). We assumed a *Starting Amount* of $0 with yearly contributions of $100 at an 8% return rate over 14 years.
+
+While 8% may not exactly match the year-over-year performance of each index fund, it serves as an approximation. Future study could include a deeper dive into yearly returns to further refine that number. 
 
 ## Potential Method Errors
 If you've made it this far, you've probably realized that the author has too much free time. While that may be the case, I am only human and am likely to have an error in my method. For accounting for gains, the thinking was to remain consistent in how payoffs/rates of return are calculated. The use of `RoR = payoff / bet` was selected to mirror how gains are calculated for financial security [Return on Asset](https://www.investopedia.com/terms/r/returnonassets.asp). Again, this will not perfectly reflect all financial realities (inflation, fees, etc.), but it gives a good rough estimate.
