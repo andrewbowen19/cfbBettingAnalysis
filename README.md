@@ -1,5 +1,5 @@
 # College Football Betting Analysis
-Repository for testing the hypothesis: "Is Nick Saban and Alabama football a safer investment than the US Economy?"
+Is Nick Saban and Alabama football a safer investment than the US Economy?
 
 Nicholas Lou Saban Jr. | The U.S. Economy
 :------------:|:------------------:
