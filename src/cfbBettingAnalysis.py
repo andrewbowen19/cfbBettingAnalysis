@@ -146,7 +146,7 @@ class cfbBettingAnalysis(object):
         
     def getReturns(self, desired_years):
         '''
-        Calculates net returns for consisten $100 bets on collegiate futures
+        Calculates net returns for consistent $100 bets on collegiate futures
         
         paramters:
             desired_years - list; year range for which returns should be calculated
@@ -163,14 +163,16 @@ class cfbBettingAnalysis(object):
         df = self.preseason_odds.loc[desired_years[0]: desired_years[1]]
         print(df)
         
-        print('---------------------------------')
+        print('----------------------------')
 #        Calculating net rate of return
         principal = 100 * len(df)
         winnings = np.sum(df['True Payout'])
         r = round(100 * (winnings / principal), 2)
         
-        print(f'Principal {principal}')
-        print(f'Total won back {winnings}')
+        print(f"{self.team} Betting Returns")
+        print('----------------------------')
+        print(f'Principal: ${principal}')
+        print(f'Total won back: ${winnings}')
         print(f'Return on Investment: {r}%')
         
         return principal, winnings, r
