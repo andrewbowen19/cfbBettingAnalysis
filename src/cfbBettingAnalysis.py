@@ -164,20 +164,38 @@ class cfbBettingAnalysis(object):
         print(df)
         
         print('----------------------------')
+
 #        Calculating net rate of return
-        principal = 100 * len(df)
-        winnings = np.sum(df['True Payout'])
-        r = round(100 * (winnings / principal), 2)
+        cost = 100 * len(df) ## $100 * # of years betting
+        net_return = np.sum(df['True Payout'])
+        roi = round(100 * (net_return / cost), 2)
         
         print(f"{self.team} Betting Returns")
         print('----------------------------')
-        print(f'Principal: ${principal}')
-        print(f'Total won back: ${winnings}')
-        print(f'Return on Investment: {r}%')
+        print(f'Principal (Amount "invested"): ${cost}')
+        print(f'Total won back: ${net_return}')
+        print(f'Return on Investment: {roi}%')
         
-        return principal, winnings, r
+        return cost, net_return, roi
 
-if __name__=="__main__":
+    def compundInterest(self, p=1400, r=0.1, n=14):#, t=14):
+        '''
+        Calculates compound interest with contributions over time
+        Using the formula produced here:
+            https://structx.com/annual_compound_interest_with_contributions.html
+        
+        parameters:
+            p : amount to be contributed yearly
+            r : foat; rate of interest on the investment (decimal), assumed to be constant
+            n : int; number of compunding cycles per year (default 1)
+            t : int, default 14; number of years invested
+        '''
+        z = (1 + r)**n
+        future_value = (p * z) + p * ((z-1)/r)
+
+        return future_value
+
+if __name__ == "__main__":
     c = cfbBettingAnalysis()
     c.getFutureOdds()
     dat, ps_odds = c.calculateTeamPayouts()
@@ -192,6 +210,12 @@ if __name__=="__main__":
     print(f'Avg Principal: {p_avg}')
     print(f'Avg Winnings {w_avg}')
     print(f'Avg Return Rate: {r_avg}%')
+
+    # Testing out rate of return
+    print("---------------------")
+    r = 0.06 # Assuming Dow
+    future_val = c.compundInterest(100, 0.08, 14)
+    print(f'Future Value of $100 annual contribution to index fund with r=0.1: ${future_val}')
 
 
 
